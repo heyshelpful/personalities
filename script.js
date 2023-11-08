@@ -1,14 +1,21 @@
-document.getElementById('personality-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
-
+document.getElementById('submit-button').addEventListener('click', function() {
     // Show loading icon
     document.getElementById('loading-icon').hidden = false;
 
     // Collect data from the form
-    var formData = new FormData(event.target);
+    var textInput = document.getElementById('text-input').value;
+    var additionalInfo = document.getElementById('additional-info').value;
+    var mobileNumber = document.getElementById('mobile-number').value;
+    var files = document.getElementById('file-upload').files;
+
+    var formData = new FormData();
+    formData.append('text', textInput);
+    formData.append('additionalInfo', additionalInfo);
+    formData.append('mobileNumber', mobileNumber);
+    // Assuming you have a way to handle file uploads via Zapier, you could append files here
 
     // Send the data to Zapier webhook
-    fetch('YOUR_ZAPIER_WEBHOOK_URL', {
+    fetch('https://hooks.zapier.com/hooks/catch/9745668/3zz2xc3/', {
         method: 'POST',
         body: formData
     })
@@ -17,10 +24,10 @@ document.getElementById('personality-form').addEventListener('submit', function(
         // Handle response here (e.g., show a confirmation message)
         console.log(data);
         document.getElementById('loading-icon').hidden = true;
-        // You might want to add code here to update the UI to show the summary
     })
     .catch(error => {
         console.error('Error:', error);
         document.getElementById('loading-icon').hidden = true;
     });
 });
+
