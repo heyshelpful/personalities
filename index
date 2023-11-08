@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ... other head elements ... -->
     <title>Customize Your A.I. Buddy</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Customize Your A.I. Buddy to be Just Like Your Favorite Person or Hero</h1>
-    </header>
-    <section class="icon-grid">
-        <!-- Icons representing different personalities -->
-        <!-- Replace 'path-to-icon' with the actual paths to your image files -->
-        <div class="icon-item"><img src="path-to-icon-1.png" alt="Icon 1"><p>Personality 1</p></div>
-        <div class="icon-item"><img src="path-to-icon-2.png" alt="Icon 2"><p>Personality 2</p></div>
-        <div class="icon-item"><img src="path-to-icon-3.png" alt="Icon 3"><p>Personality 3</p></div>
-        <div class="icon-item"><img src="path-to-icon-4.png" alt="Icon 4"><p>Personality 4</p></div>
-        <div class="icon-item"><img src="path-to-icon-5.png" alt="Icon 5"><p>Personality 5</p></div>
-        <div class="icon-item"><img src="path-to-icon-6.png" alt="Icon 6"><p>Personality 6</p></div>
-    </section>
+    <!-- ... header and icon-grid section ... -->
+
     <main>
-        <div id="instructions">Paste content or upload files to shape the personality of your A.I. buddy:</div>
-        <textarea id="text-input" placeholder="Paste content here"></textarea>
-        <input type="file" id="file-upload" multiple>
-        <textarea id="additional-info" placeholder="Anything else you want to include in your A.I.'s personality?"></textarea>
-        <input type="text" id="mobile-number" placeholder="Enter your mobile number">
-        <button id="submit-button">Submit</button>
-        <div id="loading-icon" hidden>Loading...</div>
+        <form id="personality-form">
+            <div id="instructions">Paste content or upload files to shape the personality of your A.I. buddy:</div>
+            <textarea name="text-input" id="text-input" placeholder="Paste content here"></textarea>
+            <input type="file" id="file-upload" name="files" multiple>
+            <textarea name="additional-info" id="additional-info" placeholder="Anything else you want to include in your A.I.'s personality?"></textarea>
+            <input type="text" id="mobile-number" name="mobile-number" placeholder="Enter your mobile number">
+            <input type="submit" id="submit-button" value="Submit">
+            <div id="loading-icon" hidden>Loading...</div>
+        </form>
     </main>
-    <footer>
-        <p>© 2023 HabitGPT</p>
-    </footer>
+    
+    <!-- ... footer ... -->
+    
     <script src="script.js"></script>
 </body>
 </html>
+
